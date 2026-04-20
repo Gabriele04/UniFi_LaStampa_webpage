@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Stampa - Ultime notizie di cronaca e news dall'Italia e dal mondo</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="d-none d-lg-block">
+        <nav class="py-1 bg-stampa-blue">
+            <div class="container px-5 d-flex justify-content-between align-items-center mb-2 mt-2" style="font-size: 12px; font-weight: bold;">
+                <div>
+                    <a href="#" class="text-white text-decoration-none me-1">IL QUOTIDIANO</a> <span class="text-white text-opacity-75">|</span>
+                    <a href="#" class="text-white text-decoration-none ms-1">PREMIUM</a>
+                </div>
+                <div>
+                    <a href="#" class="text-white text-decoration-none me-1">ABBONATI</a> <span class="text-white text-opacity-75">|</span>
+                    <a href="#" class="text-white text-decoration-none ms-1">ACCEDI</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="py-4 bg" id="header-trigger">
+            <div class="container px-5 position-relative">
+                <div class="text-center text-stampa-blue mt-2 mb-2" style="font-size: 0.85rem;">
+                    <time class="time"></time>
+                </div>
+
+                <div class="text-center mt-3">
+                    <a href="#" class="text-dark text-decoration-none" aria-label="link">
+                        <svg viewBox="0 0 281 34" height="55" class="d-inline-block align-text-bottom">
+                            <path d="M30.274 32.517V19.588h-4.469c0 5.115-.913 8.761-6.68 8.761h-5.237V7.182c0-1.185.673-1.894 1.874-1.894h2.98V1.12H0v4.167h2.98c1.201 0 1.873.71 1.873 1.894v19.273c0 1.184-.672 1.894-1.874 1.894H.048v4.167h30.226zm15.24-31.34l-8.097 23.677c-.97 2.89-1.648 3.552-3.345 3.552h-1.65v4.167h14.255v-4.167H45.27c-1.309 0-3.005-.142-3.005-.9 0-.662.194-1.373.727-3.03l.582-1.895h9.89l1.019 3.41c.194.71.242 1.231.242 1.705 0 .521-1.212.71-2.667.71h-1.455v4.167h17.699v-4.167h-1.648c-1.697 0-2.376-.663-3.346-3.552L55.212 1.177h-9.698zm2.81 7.289h.102l3.619 10.09h-7.289l3.569-10.09zm54.941-7.94h-3.96l-.86 2.249C95.726 1.052 92.625 0 89.38 0c-6.585 0-13.694 2.153-13.694 10.048 0 13.73 20.662 8.181 20.662 15.023 0 2.728-3.006 4.115-5.488 4.115-5.63 0-9.783-3.492-10.402-8.514h-4.438v12.535h4.008l1.24-2.535c3.006 2.2 6.73 2.966 10.403 2.966 6.585 0 13.168-2.584 13.168-10.239 0-13.637-20.66-8.804-20.66-14.831 0-3.207 2.576-4.115 5.344-4.115 4.199 0 8.637 2.823 9.352 7.846h4.39V.53l.001-.003zm7.65 12.62c0-4.83 1.419-7.859 6.856-7.859v21.168c0 1.184-.662 1.894-1.844 1.894h-2.932v4.167h18.348v-4.167h-2.837c-1.182 0-1.844-.71-1.844-1.895V5.288c5.438 0 6.856 3.03 6.856 7.863h4.397V1.121H106.52v12.03h4.397l-.002-.005zm34.951-11.969l-8.097 23.677c-.97 2.89-1.648 3.552-3.345 3.552h-1.649v4.167h14.255v-4.167h-1.407c-1.309 0-3.005-.142-3.005-.9 0-.662.194-1.373.727-3.03l.582-1.895h9.89l1.019 3.41c.194.71.242 1.231.242 1.705 0 .521-1.212.71-2.667.71h-1.454v4.167h17.699v-4.167h-1.648c-1.698 0-2.376-.663-3.346-3.552l-8.1-23.677h-9.695zm2.812 7.289h.1l3.62 10.09h-7.289l3.569-10.09zm21.754-7.344v4.167h2.894c1.206 0 1.882.71 1.882 1.894v19.271c0 1.185-.676 1.895-1.882 1.895h-2.894v4.166h13.943V28.35h-2.026c-1.206 0-1.881-.71-1.881-1.895V6h.096l7.525 26.516h7.043l7.573-26.043h.097v19.98c0 1.185-.675 1.895-1.882 1.895h-2.025v4.166h17.509v-4.166h-2.653c-1.206 0-1.882-.71-1.882-1.894V7.182c0-1.184.675-1.894 1.882-1.894h2.653V1.12H199.23l-5.692 19.273h-.097L187.897 1.12h-17.465zm52.39 25.389c0 1.184-.67 1.894-1.866 1.894h-2.917v4.168h18.84v-4.168h-3.203c-1.196 0-1.866-.71-1.866-1.894v-7.483h5.26c8.799 0 13.438-2.462 13.438-8.948 0-6.487-4.639-8.903-12.48-8.903H217.99v4.168h2.965c1.196 0 1.865.71 1.865 1.894v19.272zm9.185-21.408h4.789c2.63 0 4.742 1.85 4.742 4.789 0 2.94-2.207 4.74-5.493 4.74h-4.038v-9.53zm25.425-3.926l-8.097 23.677c-.97 2.89-1.648 3.552-3.345 3.552h-1.65v4.167h14.255v-4.167h-1.406c-1.309 0-3.005-.142-3.005-.9 0-.662.193-1.373.727-3.03l.582-1.895h9.89l1.019 3.41c.194.71.242 1.231.242 1.705 0 .521-1.213.71-2.667.71h-1.454v4.167h17.698v-4.167h-1.648c-1.697 0-2.376-.663-3.346-3.552l-8.096-23.677h-9.7zm2.811 7.289h.101l3.619 10.09h-7.288l3.568-10.09z" fill="currentColor" fill-rule="nonzero"></path>
+                        </svg>
+                    </a>
+                    <div class="fst-italic mt-1 mb-0" style="font-size: 0.95rem;">Lorem ipsum integer</div>
+                </div>
+
+                <div class="position-absolute top-50 start-0 w-100 px-5 translate-middle-y d-flex justify-content-between align-items-center" style="pointer-events: none;">
+                    <div class="d-flex gap-4 align-items-center text-stampa-blue fw-bold" style="font-size: 0.9rem; pointer-events: auto;">
+                        <span style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#menuOverlay"><i class="bi bi-list fs-4 align-middle "></i> MENU</span>
+                        <span style="cursor: pointer;"><i class="bi bi-search fs-5 align-middle"></i> CERCA</span>
+                    </div>
+                    <div class="d-flex gap-4 align-items-center" style="pointer-events: auto;">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-cloud-sun text-warning fs-3"></i>
+                            <span class="fw-bold" style="font-size: 1.1rem;">24°</span>
+                            <span class="text-secondary-emphasis" style="font-size: 0.9rem;">Prato</span>
+                        </div>
+                        <i class="bi bi-search fs-5" style="cursor: pointer; color: #000;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="border-top border-bottom py-2 bg-white">
+            <div class="container px-2">
+                <ul class="nav w-100 d-flex flex-nowrap" style="font-size: 0.75rem; font-weight: bold;">
+                    <li class="nav-item border-end flex-fill text-center"><a class="nav-link p-0 text-decoration-none text-stampa-blue" href="#">QUISQUE PELLENTESQUE</a></li>
+                    <li class="nav-item border-end flex-fill text-center"><a class="nav-link p-0 text-decoration-none text-stampa-blue" href="#">INTEGER NISI</a></li>
+                    <li class="nav-item border-end flex-fill text-center"><a class="nav-link p-0 text-decoration-none text-stampa-blue" href="#">AENEAN TINCIDUNT</a></li>
+                    <li class="nav-item border-end flex-fill text-center"><a class="nav-link p-0 text-decoration-none text-stampa-blue" href="#">PROIN AT NISI</a></li>
+                    <li class="nav-item border-end flex-fill text-center"><a class="nav-link p-0 text-decoration-none text-stampa-blue" href="#">VESTIBULUM</a></li>
+                    <li class="nav-item border-end flex-fill text-center"><a class="nav-link p-0 text-decoration-none text-stampa-blue" href="#">PROIN SAGITTIS</a></li>
+                    <li class="nav-item flex-fill text-center"><a class="nav-link p-0 text-decoration-none text-dark" href="#">EDIZIONI LOCALI <i class="bi bi-chevron-down"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="d-block d-lg-none">
+        <div class="fixed-top shadow-sm d-block d-lg-none" style="z-index: 1040;">
+            <nav class="py-2 px-3 d-flex justify-content-between align-items-center bg-white border-bottom">
+                <a href="#" class="text-stampa-blue text-decoration-none fw-bold" style="font-size: 0.9rem;">ABBONATI</a>
+                <div class="border border-dark text-stampa-blue fw-bold px-2 rounded-1">S</div>
+            </nav>
+
+            <div class="py-2 px-3 bg-mobile border-bottom">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex gap-3 align-items-center text-stampa-blue">
+                        <i class="bi bi-list fs-1" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#menuOverlay"></i>
+                        <i class="bi bi-search fs-3" style="cursor: pointer;"></i>
+                    </div>
+
+                    <a href="#" class="text-dark text-decoration-none" aria-label="link">
+                        <svg viewBox="0 0 281 34" height="26" class="d-inline-block align-text-bottom">
+                            <path d="M30.274 32.517V19.588h-4.469c0 5.115-.913 8.761-6.68 8.761h-5.237V7.182c0-1.185.673-1.894 1.874-1.894h2.98V1.12H0v4.167h2.98c1.201 0 1.873.71 1.873 1.894v19.273c0 1.184-.672 1.894-1.874 1.894H.048v4.167h30.226zm15.24-31.34l-8.097 23.677c-.97 2.89-1.648 3.552-3.345 3.552h-1.65v4.167h14.255v-4.167H45.27c-1.309 0-3.005-.142-3.005-.9 0-.662.194-1.373.727-3.03l.582-1.895h9.89l1.019 3.41c.194.71.242 1.231.242 1.705 0 .521-1.212.71-2.667.71h-1.455v4.167h17.699v-4.167h-1.648c-1.697 0-2.376-.663-3.346-3.552L55.212 1.177h-9.698zm2.81 7.289h.102l3.619 10.09h-7.289l3.569-10.09zm54.941-7.94h-3.96l-.86 2.249C95.726 1.052 92.625 0 89.38 0c-6.585 0-13.694 2.153-13.694 10.048 0 13.73 20.662 8.181 20.662 15.023 0 2.728-3.006 4.115-5.488 4.115-5.63 0-9.783-3.492-10.402-8.514h-4.438v12.535h4.008l1.24-2.535c3.006 2.2 6.73 2.966 10.403 2.966 6.585 0 13.168-2.584 13.168-10.239 0-13.637-20.66-8.804-20.66-14.831 0-3.207 2.576-4.115 5.344-4.115 4.199 0 8.637 2.823 9.352 7.846h4.39V.53l.001-.003zm7.65 12.62c0-4.83 1.419-7.859 6.856-7.859v21.168c0 1.184-.662 1.894-1.844 1.894h-2.932v4.167h18.348v-4.167h-2.837c-1.182 0-1.844-.71-1.844-1.895V5.288c5.438 0 6.856 3.03 6.856 7.863h4.397V1.121H106.52v12.03h4.397l-.002-.005zm34.951-11.969l-8.097 23.677c-.97 2.89-1.648 3.552-3.345 3.552h-1.649v4.167h14.255v-4.167h-1.407c-1.309 0-3.005-.142-3.005-.9 0-.662.194-1.373.727-3.03l.582-1.895h9.89l1.019 3.41c.194.71.242 1.231.242 1.705 0 .521-1.212.71-2.667.71h-1.454v4.167h17.699v-4.167h-1.648c-1.698 0-2.376-.663-3.346-3.552l-8.1-23.677h-9.695zm2.812 7.289h.1l3.62 10.09h-7.289l3.569-10.09zm21.754-7.344v4.167h2.894c1.206 0 1.882.71 1.882 1.894v19.271c0 1.185-.676 1.895-1.882 1.895h-2.894v4.166h13.943V28.35h-2.026c-1.206 0-1.881-.71-1.881-1.895V6h.096l7.525 26.516h7.043l7.573-26.043h.097v19.98c0 1.185-.675 1.895-1.882 1.895h-2.025v4.166h17.509v-4.166h-2.653c-1.206 0-1.882-.71-1.882-1.894V7.182c0-1.184.675-1.894 1.882-1.894h2.653V1.12H199.23l-5.692 19.273h-.097L187.897 1.12h-17.465zm52.39 25.389c0 1.184-.67 1.894-1.866 1.894h-2.917v4.168h18.84v-4.168h-3.203c-1.196 0-1.866-.71-1.866-1.894v-7.483h5.26c8.799 0 13.438-2.462 13.438-8.948 0-6.487-4.639-8.903-12.48-8.903H217.99v4.168h2.965c1.196 0 1.865.71 1.865 1.894v19.272zm9.185-21.408h4.789c2.63 0 4.742 1.85 4.742 4.789 0 2.94-2.207 4.74-5.493 4.74h-4.038v-9.53zm25.425-3.926l-8.097 23.677c-.97 2.89-1.648 3.552-3.345 3.552h-1.65v4.167h14.255v-4.167h-1.406c-1.309 0-3.005-.142-3.005-.9 0-.662.193-1.373.727-3.03l.582-1.895h9.89l1.019 3.41c.194.71.242 1.231.242 1.705 0 .521-1.213.71-2.667.71h-1.454v4.167h17.698v-4.167h-1.648c-1.697 0-2.376-.663-3.346-3.552l-8.096-23.677h-9.7zm2.811 7.289h.101l3.619 10.09h-7.288l3.568-10.09z" fill="currentColor" fill-rule="nonzero"></path>
+                        </svg>
+                    </a>
+
+                    <a href="#" class="text-stampa-blue text-decoration-none fw-bold" style="font-size: 0.9rem;">ACCEDI</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 104px;"></div>
+
+        <div class="py-2 px-3 bg-mobile border-bottom">
+            <div class="text-center text-stampa-blue fw-bold mt-1 mb-1" style="font-size: 0.8rem;">
+                <time class="time"></time>
+            </div>
+        </div>
+
+        <nav class="bg-mobile-darker pt-1">
+            <div class="container-fluid px-0 ed">
+                <div class="d-flex align-items-center position-relative w-100">
+                    <ul class="nav flex-nowrap overflow-auto flex-grow-1 align-items-center pt-1 scroll-mobile">
+                        <li class="nav-item flex-shrink-0 border-end px-3"><a class="nav-link p-0 text-decoration-none fw-bold text-stampa-blue" style="font-size: 0.85rem;" href="#">QUISQUE PELLENTESQUE</a></li>
+                        <li class="nav-item flex-shrink-0 border-end px-3"><a class="nav-link p-0 text-decoration-none fw-bold text-stampa-blue" style="font-size: 0.85rem;" href="#">INTEGER NISI</a></li>
+                        <li class="nav-item flex-shrink-0 border-end px-3"><a class="nav-link p-0 text-decoration-none fw-bold text-stampa-blue" style="font-size: 0.85rem;" href="#">AENEAN TINCIDUNT</a></li>
+                        <li class="nav-item flex-shrink-0 border-end px-3"><a class="nav-link p-0 text-decoration-none fw-bold text-stampa-blue" style="font-size: 0.85rem;" href="#">PROIN AT NISI</a></li>
+                        <li class="nav-item flex-shrink-0 border-end px-3"><a class="nav-link p-0 text-decoration-none fw-bold text-stampa-blue" style="font-size: 0.85rem;" href="#">VESTIBULUM</a></li>
+                        <li class="nav-item flex-shrink-0 px-3"><a class="nav-link p-0 text-decoration-none fw-bold text-stampa-blue" style="font-size: 0.85rem;" href="#">PROIN SAGITTIS</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+
+</header>
+
+<nav id="stickyNavbar" class="fixed-top bg-mobile border-bottom shadow-sm d-none d-lg-block" style="transform: translateY(-100%); transition: transform 0.3s ease-in-out; z-index: 1030;">
+    <div class="container px-5 py-2 d-flex justify-content-between align-items-center position-relative">
+
+        <div class="d-flex gap-4 align-items-center text-stampa-blue fw-bold" style="font-size: 0.8rem;">
+            <span style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#menuOverlay"><i class="bi bi-list fs-4 align-middle me-1"></i> MENU</span>
+            <span style="cursor: pointer;"><i class="bi bi-search fs-5 align-middle me-1"></i> CERCA</span>
+        </div>
+
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <a href="#" class="text-dark text-decoration-none" aria-label="link">
+                <svg viewBox="0 0 281 34" height="26" class="d-inline-block align-text-bottom">
+                    <path d="M30.274 32.517V19.588h-4.469c0 5.115-.913 8.761-6.68 8.761h-5.237V7.182c0-1.185.673-1.894 1.874-1.894h2.98V1.12H0v4.167h2.98c1.201 0 1.873.71 1.873 1.894v19.273c0 1.184-.672 1.894-1.874 1.894H.048v4.167h30.226zm15.24-31.34l-8.097 23.677c-.97 2.89-1.648 3.552-3.345 3.552h-1.65v4.167h14.255v-4.167H45.27c-1.309 0-3.005-.142-3.005-.9 0-.662.194-1.373.727-3.03l.582-1.895h9.89l1.019 3.41c.194.71.242 1.231.242 1.705 0 .521-1.212.71-2.667.71h-1.455v4.167h17.699v-4.167h-1.648c-1.697 0-2.376-.663-3.346-3.552L55.212 1.177h-9.698zm2.81 7.289h.102l3.619 10.09h-7.289l3.569-10.09zm54.941-7.94h-3.96l-.86 2.249C95.726 1.052 92.625 0 89.38 0c-6.585 0-13.694 2.153-13.694 10.048 0 13.73 20.662 8.181 20.662 15.023 0 2.728-3.006 4.115-5.488 4.115-5.63 0-9.783-3.492-10.402-8.514h-4.438v12.535h4.008l1.24-2.535c3.006 2.2 6.73 2.966 10.403 2.966 6.585 0 13.168-2.584 13.168-10.239 0-13.637-20.66-8.804-20.66-14.831 0-3.207 2.576-4.115 5.344-4.115 4.199 0 8.637 2.823 9.352 7.846h4.39V.53l.001-.003zm7.65 12.62c0-4.83 1.419-7.859 6.856-7.859v21.168c0 1.184-.662 1.894-1.844 1.894h-2.932v4.167h18.348v-4.167h-2.837c-1.182 0-1.844-.71-1.844-1.895V5.288c5.438 0 6.856 3.03 6.856 7.863h4.397V1.121H106.52v12.03h4.397l-.002-.005zm34.951-11.969l-8.097 23.677c-.97 2.89-1.648 3.552-3.345 3.552h-1.649v4.167h14.255v-4.167h-1.407c-1.309 0-3.005-.142-3.005-.9 0-.662.194-1.373.727-3.03l.582-1.895h9.89l1.019 3.41c.194.71.242 1.231.242 1.705 0 .521-1.212.71-2.667.71h-1.454v4.167h17.699v-4.167h-1.648c-1.698 0-2.376-.663-3.346-3.552l-8.1-23.677h-9.695zm2.812 7.289h.1l3.62 10.09h-7.289l3.569-10.09zm21.754-7.344v4.167h2.894c1.206 0 1.882.71 1.882 1.894v19.271c0 1.185-.676 1.895-1.882 1.895h-2.894v4.166h13.943V28.35h-2.026c-1.206 0-1.881-.71-1.881-1.895V6h.096l7.525 26.516h7.043l7.573-26.043h.097v19.98c0 1.185-.675 1.895-1.882 1.895h-2.025v4.166h17.509v-4.166h-2.653c-1.206 0-1.882-.71-1.882-1.894V7.182c0-1.184.675-1.894 1.882-1.894h2.653V1.12H199.23l-5.692 19.273h-.097L187.897 1.12h-17.465zm52.39 25.389c0 1.184-.67 1.894-1.866 1.894h-2.917v4.168h18.84v-4.168h-3.203c-1.196 0-1.866-.71-1.866-1.894v-7.483h5.26c8.799 0 13.438-2.462 13.438-8.948 0-6.487-4.639-8.903-12.48-8.903H217.99v4.168h2.965c1.196 0 1.865.71 1.865 1.894v19.272zm9.185-21.408h4.789c2.63 0 4.742 1.85 4.742 4.789 0 2.94-2.207 4.74-5.493 4.74h-4.038v-9.53zm25.425-3.926l-8.097 23.677c-.97 2.89-1.648 3.552-3.345 3.552h-1.65v4.167h14.255v-4.167h-1.406c-1.309 0-3.005-.142-3.005-.9 0-.662.193-1.373.727-3.03l.582-1.895h9.89l1.019 3.41c.194.71.242 1.231.242 1.705 0 .521-1.213.71-2.667.71h-1.454v4.167h17.698v-4.167h-1.648c-1.697 0-2.376-.663-3.346-3.552l-8.096-23.677h-9.7zm2.811 7.289h.101l3.619 10.09h-7.288l3.568-10.09z" fill="currentColor" fill-rule="nonzero"></path>
+                </svg>
+            </a>
+        </div>
+
+        <div class="d-flex gap-4 align-items-center text-stampa-blue fw-bold" style="font-size: 0.8rem;">
+            <a href="#" class="text-stampa-blue text-decoration-none d-flex align-items-center">
+                <span class="bg-stampa-blue text-white rounded-1 d-inline-flex justify-content-center align-items-center me-2" style="width: 20px; height: 20px; font-size: 13px; font-family: Georgia, serif;">S</span> IL QUOTIDIANO
+            </a>
+            <a href="#" class="text-stampa-blue text-decoration-none d-flex align-items-center">
+                <span class="bg-stampa-blue text-white rounded-1 d-inline-flex justify-content-center align-items-center me-2" style="width: 20px; height: 20px; font-size: 13px;"><i class="bi bi-star-fill" style="font-size: 11px;"></i></span> ABBONATI
+            </a>
+            <a href="#" class="text-stampa-blue text-decoration-none">ACCEDI</a>
+        </div>
+
+    </div>
+</nav>
+
+<section class="bg py-4 border-bottom">
+    <div class="container px-4">
+        <header>
+            <h2 class="editoriale-title-section">Lorem ipsum</h2>
+        </header>
+
+        <div class="editoriali-track">
+
+            <article>
+                <a href="#" class="editoriale-card">
+                    <figure class="m-0 flex-shrink-0">
+                        <img src="https://placehold.co/150x150" alt="[Immagine segnaposto 1]" class="editoriale-img">
+                    </figure>
+                    <div class="editoriale-text">
+                        <header>
+                            <h4 class="editoriale-title">Lorem ipsum dolor sit amet consectetur</h4>
+                        </header>
+                        <footer>
+                            <span class="editoriale-author">Lorem Ipsum</span>
+                        </footer>
+                    </div>
+                </a>
+            </article>
+
+            <article>
+                <a href="#" class="editoriale-card">
+                    <figure class="m-0 flex-shrink-0">
+                        <img src="https://placehold.co/150x150" alt="[Immagine segnaposto 2]" class="editoriale-img">
+                    </figure>
+                    <div class="editoriale-text">
+                        <header>
+                            <h4 class="editoriale-title">Sed ut perspiciatis unde omnis iste</h4>
+                        </header>
+                        <footer>
+                            <span class="editoriale-author">Lorem Ipsum</span>
+                        </footer>
+                    </div>
+                </a>
+            </article>
+
+            <article>
+                <a href="#" class="editoriale-card">
+                    <figure class="m-0 flex-shrink-0">
+                        <img src="https://placehold.co/150x150" alt="[Immagine segnaposto 3]" class="editoriale-img">
+                    </figure>
+                    <div class="editoriale-text">
+                        <header>
+                            <h4 class="editoriale-title">Nemo enim ipsam voluptatem quia voluptas</h4>
+                        </header>
+                        <footer>
+                            <span class="editoriale-author">Lorem Ipsum</span>
+                        </footer>
+                    </div>
+                </a>
+            </article>
+
+            <article>
+                <a href="#" class="editoriale-card">
+                    <figure class="m-0 flex-shrink-0">
+                        <img src="https://placehold.co/150x150" alt="[Immagine segnaposto 4]" class="editoriale-img">
+                    </figure>
+                    <div class="editoriale-text">
+                        <header>
+                            <h4 class="editoriale-title">Neque porro quisquam est qui dolorem</h4>
+                        </header>
+                        <footer>
+                            <span class="editoriale-author">Lorem Ipsum</span>
+                        </footer>
+                    </div>
+                </a>
+            </article>
+
+            <article>
+                <a href="#" class="editoriale-card">
+                    <figure class="m-0 flex-shrink-0">
+                        <img src="https://placehold.co/150x150" alt="[Immagine segnaposto 5]" class="editoriale-img">
+                    </figure>
+                    <div class="editoriale-text">
+                        <header>
+                            <h4 class="editoriale-title">Quis autem vel eum iure reprehenderit</h4>
+                        </header>
+                        <footer>
+                            <span class="editoriale-author">Lorem Ipsum</span>
+                        </footer>
+                    </div>
+                </a>
+            </article>
+
+            <article>
+                <a href="#" class="editoriale-card">
+                    <figure class="m-0 flex-shrink-0">
+                        <img src="https://placehold.co/150x150" alt="[Immagine segnaposto 6]" class="editoriale-img">
+                    </figure>
+                    <div class="editoriale-text">
+                        <header>
+                            <h4 class="editoriale-title">Duis aute irure dolor in reprehenderit</h4>
+                        </header>
+                        <footer>
+                            <span class="editoriale-author">Lorem Ipsum</span>
+                        </footer>
+                    </div>
+                </a>
+            </article>
+
+            <article>
+                <a href="#" class="editoriale-card">
+                    <figure class="m-0 flex-shrink-0">
+                        <img src="https://placehold.co/150x150" alt="[Immagine segnaposto 7]" class="editoriale-img">
+                    </figure>
+                    <div class="editoriale-text">
+                        <header>
+                            <h4 class="editoriale-title">Excepteur sint occaecat cupidatat non</h4>
+                        </header>
+                        <footer>
+                            <span class="editoriale-author">Lorem Ipsum</span>
+                        </footer>
+                    </div>
+                </a>
+            </article>
+
+            <article>
+                <a href="#" class="editoriale-card">
+                    <figure class="m-0 flex-shrink-0">
+                        <img src="https://placehold.co/150x150" alt="[Immagine segnaposto 8]" class="editoriale-img">
+                    </figure>
+                    <div class="editoriale-text">
+                        <header>
+                            <h4 class="editoriale-title">Sunt in culpa qui officia deserunt mollit</h4>
+                        </header>
+                        <footer>
+                            <span class="editoriale-author">Lorem Ipsum</span>
+                        </footer>
+                    </div>
+                </a>
+            </article>
+        </div>
+
+    </div>
+</section>
+
+<main class="container px-4 py-4">
+    <div class="row">
+
+        <div class="col-lg-8 border-end pe-lg-4 mb-5 mb-lg-0">
+
+            <section class="bg-mobile-darker p-3 mb-4 rounded-1">
+                <header>
+                    <h3 class="section-header mt-0 pt-0 border-top-0">Sport</h3>
+                </header>
+
+                <article class="mb-4">
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/600x400" class="w-100" alt="[Immagine segnaposto 9]">
+                        </figure>
+                        <header>
+                            <div class="article-category">Lorem Ipsum</div>
+                            <h2 class="article-title-main">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</h2>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-2">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+
+                <div class="row">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <article>
+                            <a href="#" class="text-decoration-none">
+                                <figure class="m-0 mb-2">
+                                    <img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 10]">
+                                </figure>
+                                <header>
+                                    <div class="article-category">Lorem Ipsum</div>
+                                    <h4 class="article-title-sub">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</h4>
+                                </header>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="col-md-6">
+                        <article>
+                            <a href="#" class="text-decoration-none">
+                                <figure class="m-0 mb-2">
+                                    <img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 11]">
+                                </figure>
+                                <header>
+                                    <div class="article-category">Lorem Ipsum</div>
+                                    <h4 class="article-title-sub">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</h4>
+                                </header>
+                                <footer>
+                                    <div class="article-author mt-2">Lorem Ipsum</div>
+                                </footer>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-4">
+                <header>
+                    <h3 class="section-header">In evidenza</h3>
+                </header>
+                <div class="row mb-4">
+                    <div class="col-md-8 mb-4 mb-md-0 pe-md-3">
+                        <article>
+                            <a href="#" class="text-decoration-none">
+                                <figure class="m-0 mb-2">
+                                    <img src="https://placehold.co/600x350" class="w-100" alt="[Immagine segnaposto 12]">
+                                </figure>
+                                <header>
+                                    <div class="article-category text-dark">Lorem Ipsum</div>
+                                    <h2 class="article-title-main" style="font-size: 1.8rem;">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit</h2>
+                                </header>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article>
+                            <a href="#" class="text-decoration-none">
+                                <figure class="m-0 mb-2">
+                                    <img src="https://placehold.co/300x200" class="w-100" alt="[Immagine segnaposto 13]">
+                                </figure>
+                                <header>
+                                    <div class="article-category text-dark">Lorem Ipsum</div>
+                                    <h4 class="article-title-sub fs-5">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</h4>
+                                </header>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-5">
+                <header>
+                    <h3 class="section-header">Esteri</h3>
+                </header>
+                <article class="mb-4">
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/800x450" class="w-100" alt="[Immagine segnaposto 14]">
+                        </figure>
+                        <header>
+                            <div class="mt-2 mb-1">
+                                <span class="badge bg-danger rounded-1 fw-bold" style="font-size: 0.75rem; padding: 4px 6px; letter-spacing: 0.5px;">LOREM IPSUM</span>
+                            </div>
+                            <h2 class="article-title-main">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit</h2>
+                        </header>
+                    </a>
+                </article>
+            </section>
+
+            <section class="mt-5">
+                <header>
+                    <h3 class="section-header">Lorem ipsum</h3>
+                </header>
+                <article class="mb-4">
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/800x450" class="w-100" alt="[Immagine segnaposto 15]">
+                        </figure>
+                        <header>
+                            <div class="article-category text-dark">Lorem Ipsum</div>
+                            <h2 class="article-title-main">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</h2>
+                        </header>
+                    </a>
+                </article>
+                <div class="row mt-4">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <article>
+                            <a href="#" class="text-decoration-none">
+                                <figure class="m-0 mb-2">
+                                    <img src="https://placehold.co/300x200" class="w-100" alt="[Immagine segnaposto 16]">
+                                </figure>
+                                <header>
+                                    <div class="article-category text-dark">Lorem Ipsum</div>
+                                    <h4 class="article-title-sub fs-5">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis</h4>
+                                </header>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <article>
+                            <a href="#" class="text-decoration-none">
+                                <figure class="m-0 mb-2">
+                                    <img src="https://placehold.co/300x200" class="w-100" alt="[Immagine segnaposto 17]">
+                                </figure>
+                                <header>
+                                    <div class="article-category text-dark">Lorem Ipsum</div>
+                                    <h4 class="article-title-sub fs-5">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam</h4>
+                                </header>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article>
+                            <a href="#" class="text-decoration-none">
+                                <figure class="m-0 mb-2">
+                                    <img src="https://placehold.co/300x200" class="w-100" alt="[Immagine segnaposto 18]">
+                                </figure>
+                                <header>
+                                    <div class="article-category text-dark">Lorem Ipsum</div>
+                                    <h4 class="article-title-sub fs-5">Nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla</h4>
+                                </header>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-5">
+                <header>
+                    <h3 class="section-header">I video</h3>
+                </header>
+                <div class="row mb-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <article>
+                            <a href="#" class="video-card">
+                                <figure class="m-0 w-100 h-100 position-relative">
+                                    <img src="https://placehold.co/300x500/2a2a2a/ffffff" alt="[Immagine segnaposto 19]">
+                                    <div class="video-overlay"></div>
+                                    <figcaption>
+                                        <div class="video-logo">S</div>
+                                        <div class="video-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor</div>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <article>
+                            <a href="#" class="video-card">
+                                <figure class="m-0 w-100 h-100 position-relative">
+                                    <img src="https://placehold.co/300x500/4a4a4a/ffffff" alt="[Immagine segnaposto 20]">
+                                    <div class="video-overlay"></div>
+                                    <figcaption>
+                                        <div class="video-logo">S</div>
+                                        <div class="video-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</div>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article>
+                            <a href="#" class="video-card">
+                                <figure class="m-0 w-100 h-100 position-relative">
+                                    <img src="https://placehold.co/300x500/6a6a6a/ffffff" alt="[Immagine segnaposto 21]">
+                                    <div class="video-overlay"></div>
+                                    <figcaption>
+                                        <div class="video-logo">S</div>
+                                        <div class="video-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</div>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-5">
+                <header>
+                    <h3 class="section-header">Lorem ipsum</h3>
+                </header>
+                <div class="mb-4">
+
+                    <article class="row mb-4 border-bottom pb-4">
+                        <div class="col-md-5">
+                            <a href="#" class="text-decoration-none">
+                                <figure class="m-0">
+                                    <img src="https://placehold.co/600x400" class="w-100" alt="[Immagine segnaposto 22]">
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="col-md-7 d-flex flex-column justify-content-center mt-3 mt-md-0">
+                            <a href="#" class="text-decoration-none">
+                                <header>
+                                    <div class="article-category text-dark">Lorem Ipsum</div>
+                                    <h4 class="article-title-sub fs-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</h4>
+                                </header>
+                                <footer>
+                                    <div class="article-author mt-2">Lorem Ipsum</div>
+                                </footer>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="row mb-4 border-bottom pb-4">
+                        <div class="col-md-5">
+                            <a href="#" class="text-decoration-none">
+                                <figure class="m-0">
+                                    <img src="https://placehold.co/600x400" class="w-100" alt="[Immagine segnaposto 23]">
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="col-md-7 d-flex flex-column justify-content-center mt-3 mt-md-0">
+                            <a href="#" class="text-decoration-none">
+                                <header>
+                                    <div class="article-category text-dark">Lorem Ipsum</div>
+                                    <h4 class="article-title-sub fs-3">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</h4>
+                                </header>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="row mb-4 border-bottom pb-4">
+                        <div class="col-md-5">
+                            <a href="#" class="text-decoration-none">
+                                <figure class="m-0">
+                                    <img src="https://placehold.co/600x400" class="w-100" alt="[Immagine segnaposto 24]">
+                                </figure>
+                            </a>
+                        </div>
+                        <div class="col-md-7 d-flex flex-column justify-content-center mt-3 mt-md-0">
+                            <a href="#" class="text-decoration-none">
+                                <header>
+                                    <div class="article-category text-dark">Lorem Ipsum</div>
+                                    <h4 class="article-title-sub fs-3">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</h4>
+                                </header>
+                                <footer>
+                                    <div class="article-author mt-2">Lorem Ipsum</div>
+                                </footer>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+        </div>
+
+        <aside class="col-lg-4 ps-lg-4">
+
+            <section class="mb-4">
+                <header>
+                    <h3 class="section-header">Lorem ipsum dolor</h3>
+                </header>
+
+                <article class="mb-3 border-bottom pb-3">
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/300x200" class="w-100" alt="[Immagine segnaposto 25]">
+                        </figure>
+                        <header>
+                            <h4 class="article-title-sub fs-4">Sed ut perspiciatis unde</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+
+                <article class="mb-3 border-bottom pb-3">
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/300x200" class="w-100" alt="[Immagine segnaposto 26]">
+                        </figure>
+                        <header>
+                            <h4 class="article-title-sub fs-4">Nemo enim ipsam voluptatem</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+
+                <article>
+                    <a href="#" class="side-article">
+                        <figure class="side-article-img-container m-0">
+                            <img src="https://placehold.co/300x200" class="side-article-img" alt="[Immagine segnaposto 27]">
+                        </figure>
+                        <div>
+                            <header>
+                                <h4 class="side-article-title">Neque porro quisquam est, qui dolorem ipsum quia</h4>
+                            </header>
+                            <footer>
+                                <div class="article-author mt-1">Lorem Ipsum</div>
+                            </footer>
+                        </div>
+                    </a>
+                </article>
+
+                <article>
+                    <a href="#" class="side-article">
+                        <figure class="side-article-img-container m-0">
+                            <img src="https://placehold.co/300x250" class="side-article-img" alt="[Immagine segnaposto 28]">
+                        </figure>
+                        <div>
+                            <header>
+                                <h4 class="side-article-title">Quis autem vel eum iure reprehenderit qui in ea</h4>
+                            </header>
+                            <footer>
+                                <div class="article-author mt-1">Lorem Ipsum</div>
+                            </footer>
+                        </div>
+                    </a>
+                </article>
+
+                <article>
+                    <a href="#" class="side-article">
+                        <figure class="side-article-img-container m-0">
+                            <img src="https://placehold.co/300x250" class="side-article-img" alt="[Immagine segnaposto 29]">
+                        </figure>
+                        <div>
+                            <header>
+                                <h4 class="side-article-title">At vero eos et accusamus et iusto odio dignissimos</h4>
+                            </header>
+                            <footer>
+                                <div class="article-author mt-1">Lorem Ipsum</div>
+                            </footer>
+                        </div>
+                    </a>
+                </article>
+            </section>
+
+            <section class="mt-5">
+                <header>
+                    <h3 class="section-header">Lorem ipsum</h3>
+                </header>
+
+                <article class="mb-3 border-bottom pb-3">
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/300x250" class="w-100" alt="[Immagine segnaposto 30]">
+                        </figure>
+                        <header>
+                            <h4 class="article-title-sub fs-4">Et harum quidem rerum</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+
+                <article class="mb-3 border-bottom pb-3">
+                    <a href="#" class="text-decoration-none">
+                        <header>
+                            <h4 class="article-title-sub">Nam libero tempore, cum soluta</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+
+                <article class="mb-3 border-bottom pb-3">
+                    <a href="#" class="text-decoration-none">
+                        <header>
+                            <div class="article-category m-0 mb-1">Lorem Ipsum</div>
+                            <h4 class="article-title-sub">Temporibus autem quibusdam et aut officiis debitis</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+            </section>
+
+            <section class="mt-5">
+                <header>
+                    <h3 class="section-header">Lorem ipsum</h3>
+                </header>
+                <article class="mb-3">
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/300x250" class="w-100" alt="[Immagine segnaposto 31]">
+                        </figure>
+                        <header>
+                            <h4 class="article-title-sub">Itaque earum rerum hic tenetur a sapiente delectus</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+            </section>
+
+            <section class="mt-5">
+                <header>
+                    <h3 class="section-header">Lorem ipsum</h3>
+                </header>
+
+                <article class="mb-3">
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 32]">
+                        </figure>
+                        <header>
+                            <div class="article-category text-dark">Lorem ipsum</div>
+                            <h4 class="article-title-sub fs-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h4>
+                        </header>
+                    </a>
+                </article>
+
+                <article class="mb-3 border-bottom pb-3">
+                    <a href="#" class="text-decoration-none">
+                        <header>
+                            <div class="article-category text-dark m-0 mb-1">Lorem ipsumr</div>
+                            <h4 class="article-title-sub fs-5">Ut enim ad minima veniam, quis nostrum exercitationem ullam</h4>
+                        </header>
+                    </a>
+                </article>
+
+                <article class="mb-3 border-bottom pb-3">
+                    <a href="#" class="text-decoration-none">
+                        <header>
+                            <div class="article-category text-dark m-0 mb-1">Lorem ipsum dolor</div>
+                            <h4 class="article-title-sub fs-5">Quis autem vel eum iure reprehenderit qui in ea voluptate velit</h4>
+                        </header>
+                    </a>
+                </article>
+
+                <article class="mb-3 border-bottom pb-3">
+                    <a href="#" class="text-decoration-none">
+                        <header>
+                            <div class="article-category text-dark m-0 mb-1">Lorem ipsum dolor</div>
+                            <h4 class="article-title-sub fs-5">Vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</h4>
+                        </header>
+                    </a>
+                </article>
+
+                <article class="mt-5 mb-4">
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 33]">
+                        </figure>
+                        <header>
+                            <h4 class="article-title-sub fs-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod</h4>
+                        </header>
+                    </a>
+                </article>
+            </section>
+
+        </aside>
+    </div>
+</main>
+
+<section class="newsletter-section">
+    <div class="container px-4">
+
+        <header class="newsletter-header">
+            <h2 class="newsletter-title">Loremnews ipsumletter</h2>
+
+            <nav class="newsletter-controls d-none d-md-flex">
+                <a href="#" class="text-dark text-decoration-none fw-bold me-3" style="font-size: 0.85rem;">Vedi tutti</a>
+                <button class="newsletter-nav-btn" id="nl-prev" aria-label="prev-button"><i class="bi bi-chevron-left"></i></button>
+                <button class="newsletter-nav-btn" id="nl-next" aria-label="next-button"><i class="bi bi-chevron-right"></i></button>
+            </nav>
+        </header>
+
+        <div class="newsletter-track" id="newsletterTrack">
+            <article class="newsletter-card"><a href="#"><figure class="m-0 h-100"><img src="https://placehold.co/200x200/003B5C/fff?text=Newsletter+1" alt="[Immagine segnaposto 34]"></figure></a></article>
+            <article class="newsletter-card"><a href="#"><figure class="m-0 h-100"><img src="https://placehold.co/200x200/004a75/fff?text=Newsletter+2" alt="[Immagine segnaposto 35]"></figure></a></article>
+            <article class="newsletter-card"><a href="#"><figure class="m-0 h-100"><img src="https://placehold.co/200x200/005a8e/fff?text=Newsletter+3" alt="[Immagine segnaposto 36]"></figure></a></article>
+            <article class="newsletter-card"><a href="#"><figure class="m-0 h-100"><img src="https://placehold.co/200x200/006aa7/fff?text=Newsletter+4" alt="[Immagine segnaposto 37]"></figure></a></article>
+            <article class="newsletter-card"><a href="#"><figure class="m-0 h-100"><img src="https://placehold.co/200x200/007abf/fff?text=Newsletter+5" alt="[Immagine segnaposto 38]"></figure></a></article>
+            <article class="newsletter-card"><a href="#"><figure class="m-0 h-100"><img src="https://placehold.co/200x200/008bd8/fff?text=Newsletter+6" alt="[Immagine segnaposto 39]"></figure></a></article>
+            <article class="newsletter-card"><a href="#"><figure class="m-0 h-100"><img src="https://placehold.co/200x200/009bf1/fff?text=Newsletter+7" alt="[Immagine segnaposto 40]"></figure></a></article>
+            <article class="newsletter-card"><a href="#"><figure class="m-0 h-100"><img src="https://placehold.co/200x200/00aaff/fff?text=Newsletter+8" alt="[Immagine segnaposto 41]"></figure></a></article>
+        </div>
+
+        <div class="d-flex justify-content-end mt-3 d-md-none">
+            <a href="#" class="text-dark text-decoration-none fw-bold" style="font-size:0.9rem;">Vedi tutti <i class="bi bi-chevron-right"></i></a>
+        </div>
+
+    </div>
+</section>
+
+<div class="container px-4 py-5">
+
+    <section class="mb-5">
+        <header>
+            <h3 class="section-header">Lorem</h3>
+        </header>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 mb-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/300x200" class="w-100" alt="[Immagine segnaposto 42]">
+                        </figure>
+                        <header>
+                            <div class="article-category text-dark">Lorem Ipsum</div>
+                            <h4 class="article-title-sub fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-1">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+                <hr>
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <header>
+                            <div class="article-category text-dark">Lorem Ipsum</div>
+                            <h4 class="article-title-sub fs-6">Eiusmod tempor incididunt ut labore et dolore magna aliqua</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-1">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+            </div>
+
+            <div class="col-lg-6 col-md-8 mb-4 border-end border-start px-lg-4">
+                <article>
+                    <a href="#" class="text-decoration-none d-block">
+                        <figure class="m-0 mb-3">
+                            <img src="https://placehold.co/600x400" class="w-100" alt="[Immagine segnaposto 43]">
+                        </figure>
+                        <header>
+                            <div class="article-category text-dark text-center">Lorem Ipsum</div>
+                            <h2 class="article-title-main fs-3 text-center">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</h2>
+                        </header>
+                        <footer>
+                            <div class="article-author text-center mt-2">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+            </div>
+
+            <div class="col-lg-3 col-md-12 mb-4 ps-lg-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <header>
+                            <div class="article-category text-dark">Lorem Ipsum</div>
+                            <h4 class="article-title-sub fs-6">Nisi ut aliquip ex ea commodo consequat duis aute irure</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-1">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+                <hr>
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <header>
+                            <div class="article-category text-dark">Lorem Ipsum</div>
+                            <h4 class="article-title-sub fs-6">Dolor in reprehenderit in voluptate velit esse cillum dolore</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-1">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <header>
+            <h3 class="section-header mt-4">Lorem</h3>
+        </header>
+        <div class="row align-items-center">
+            <div class="col-md-8 mb-3 mb-md-0 pe-lg-5">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <header>
+                            <h2 class="article-title-main text-stampa-blue" style="font-size: 1.8rem;">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod</h2>
+                        </header>
+                    </a>
+                </article>
+            </div>
+            <div class="col-md-4 ps-lg-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <header>
+                            <h4 class="article-title-sub fs-6 text-stampa-blue">Tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam</h4>
+                        </header>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <header>
+            <h3 class="section-header mt-4">Lorema</h3>
+        </header>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 44]">
+                        </figure>
+                        <header>
+                            <h4 class="article-title-sub fs-6">Quis nostrud exercitation ullamco laboris nisi ut aliquip</h4>
+                        </header>
+                    </a>
+                </article>
+            </div>
+            <div class="col-md-4 mb-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 45]">
+                        </figure>
+                        <header>
+                            <h4 class="article-title-sub fs-6">Ex ea commodo consequat duis aute irure dolor in reprehenderit</h4>
+                        </header>
+                    </a>
+                </article>
+            </div>
+            <div class="col-md-4 mb-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 46]">
+                        </figure>
+                        <header>
+                            <h4 class="article-title-sub fs-6">In voluptate velit esse cillum dolore eu fugiat nulla pariatur</h4>
+                        </header>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <header>
+            <h3 class="section-header mt-4">Lorem</h3>
+        </header>
+        <div class="row">
+            <div class="col-md-4 mb-4 pe-lg-4 border-end">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 47]">
+                        </figure>
+                        <header>
+                            <div class="article-category text-dark">Lorem Ipsum</div>
+                            <h4 class="article-title-sub fs-5">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-1">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+            </div>
+            <div class="col-md-4 mb-4 px-lg-4 border-end">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 48]">
+                        </figure>
+                        <header>
+                            <div class="article-category text-dark">Lorem Ipsum</div>
+                            <h4 class="article-title-sub fs-5">Officia deserunt mollit anim id est laborum sed ut perspiciatis</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-1">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+            </div>
+            <div class="col-md-4 mb-4 ps-lg-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <header>
+                            <div class="article-category text-dark">Lorem Ipsum</div>
+                            <h4 class="article-title-sub fs-5">Unde omnis iste natus error sit voluptatem accusantium doloremque</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-1">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+                <hr>
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <header>
+                            <div class="article-category text-dark">Lorem Ipsum</div>
+                            <h4 class="article-title-sub fs-5">Laudantium totam rem aperiam eaque ipsa quae ab illo inventore</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-1">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<section class="py-5 bg-yellow">
+    <div class="container px-4">
+        <header>
+            <h3 class="section-header mb-4">Lorem</h3>
+        </header>
+        <div class="row">
+            <div class="col-md-4 mb-4 pe-lg-4 border-end border-secondary-subtle">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 49]">
+                        </figure>
+                        <header>
+                            <h4 class="article-title-sub fs-5 mt-2">Veritatis et quasi architecto beatae vitae dicta sunt explicabo</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-2">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+            </div>
+            <div class="col-md-4 mb-4 px-lg-4 border-end border-secondary-subtle">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 50]">
+                        </figure>
+                        <header>
+                            <div class="article-category text-dark">Lorem Ipsum</div>
+                            <h4 class="article-title-sub fs-5">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-1">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+            </div>
+            <div class="col-md-4 mb-4 ps-lg-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <header>
+                            <div class="article-category text-dark">Lorem Ipsum</div>
+                            <h4 class="article-title-sub fs-5">Odit aut fugit sed quia consequuntur magni dolores eos</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-1">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+                <hr class="border-secondary-subtle">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <header>
+                            <div class="article-category text-dark">Lorem Ipsum</div>
+                            <h4 class="article-title-sub fs-5">Qui ratione voluptatem sequi nesciunt neque porro quisquam</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-1">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container px-4 py-5">
+    <header>
+        <h3 class="section-header mb-4">Lorem</h3>
+    </header>
+    <div class="row">
+        <div class="col-md-4 mb-4 pe-lg-4 border-end border-secondary-subtle">
+            <article>
+                <a href="#" class="text-decoration-none">
+                    <figure class="m-0 mb-2">
+                        <img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 51]">
+                    </figure>
+                    <header>
+                        <h4 class="article-title-sub fs-5 mt-2">Veritatis et quasi architecto beatae vitae dicta sunt explicabo</h4>
+                    </header>
+                    <footer>
+                        <div class="article-author mt-2">Lorem Ipsum</div>
+                    </footer>
+                </a>
+            </article>
+        </div>
+        <div class="col-md-4 mb-4 px-lg-4 border-end border-secondary-subtle">
+            <article>
+                <a href="#" class="text-decoration-none">
+                    <figure class="m-0 mb-2">
+                        <img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 52]">
+                    </figure>
+                    <header>
+                        <div class="article-category text-dark">Lorem Ipsum</div>
+                        <h4 class="article-title-sub fs-5">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut</h4>
+                    </header>
+                    <footer>
+                        <div class="article-author mt-1">Lorem Ipsum</div>
+                    </footer>
+                </a>
+            </article>
+        </div>
+        <div class="col-md-4 mb-4 ps-lg-4">
+            <article>
+                <a href="#" class="text-decoration-none">
+                    <header>
+                        <div class="article-category text-dark">Lorem Ipsum</div>
+                        <h4 class="article-title-sub fs-5">Odit aut fugit sed quia consequuntur magni dolores eos</h4>
+                    </header>
+                    <footer>
+                        <div class="article-author mt-1">Lorem Ipsum</div>
+                    </footer>
+                </a>
+            </article>
+            <hr class="border-secondary-subtle">
+            <article>
+                <a href="#" class="text-decoration-none">
+                    <header>
+                        <div class="article-category text-dark">Lorem Ipsum</div>
+                        <h4 class="article-title-sub fs-5">Qui ratione voluptatem sequi nesciunt neque porro quisquam</h4>
+                    </header>
+                    <footer>
+                        <div class="article-author mt-1">Lorem Ipsum</div>
+                    </footer>
+                </a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="py-1" style="background-color: #faf4e4">
+    <div class="container px-4">
+
+        <header>
+            <h3 class="section-header mt-4 border-bottom-0 text-danger">LOREM IPSUM</h3>
+        </header>
+        <hr class="mb-4 text-danger">
+        <div class="row mb-5 ">
+            <div class="col-lg-3 col-md-4 mb-4 pe-lg-4">
+                <article>
+                    <a href="#" class="align-content-center gap-3 text-decoration-none" style="display: flex; border-right: none;">
+                        <figure class="m-0 flex-shrink-0">
+                            <img src="https://placehold.co/150x150" alt="[Immagine segnaposto 53]" class="editoriale-img">
+                        </figure>
+                        <div class="editoriale-text">
+                            <header><h4 class="editoriale-title">Lorem ipsum dolor sit amet consectetur</h4></header>
+                            <footer><span class="editoriale-author">Lorem Ipsum</span></footer>
+                        </div>
+                    </a>
+                </article>
+                <hr class="my-3 text-danger">
+                <article>
+                    <a href="#" class="mt-3 align-content-center gap-3 text-decoration-none" style="display: flex; border-right: none;">
+                        <figure class="m-0 flex-shrink-0">
+                            <img src="https://placehold.co/150x150" alt="[Immagine segnaposto 54]" class="editoriale-img">
+                        </figure>
+                        <div class="editoriale-text">
+                            <header><h4 class="editoriale-title">Lorem ipsum dolor sit amet consectetur</h4></header>
+                            <footer><span class="editoriale-author">Lorem Ipsum</span></footer>
+                        </div>
+                    </a>
+                </article>
+                <hr class="my-3 text-danger">
+                <article>
+                    <a href="#" class="mt-3 align-content-center gap-3 text-decoration-none" style="display: flex; border-right: none;">
+                        <figure class="m-0 flex-shrink-0">
+                            <img src="https://placehold.co/150x150" alt="[Immagine segnaposto 55]" class="editoriale-img">
+                        </figure>
+                        <div class="editoriale-text">
+                            <header><h4 class="editoriale-title">Lorem ipsum dolor sit amet consectetur</h4></header>
+                            <footer><span class="editoriale-author">Lorem Ipsum</span></footer>
+                        </div>
+                    </a>
+                </article>
+                <hr class="my-3 text-danger">
+                <article>
+                    <a href="#" class="mt-3 align-content-center gap-3 text-decoration-none" style="display: flex; border-right: none; padding-bottom: 20px;">
+                        <figure class="m-0 flex-shrink-0">
+                            <img src="https://placehold.co/150x150" alt="[Immagine segnaposto 56]" class="editoriale-img">
+                        </figure>
+                        <div class="editoriale-text">
+                            <header><h4 class="editoriale-title">Lorem ipsum dolor sit amet consectetur</h4></header>
+                            <footer><span class="editoriale-author">Lorem Ipsum</span></footer>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <div class="col-lg-7 col-md-8 mb-4 px-lg-4">
+                <article>
+                    <a href="#" class="text-decoration-none d-block">
+                        <figure class="m-0 mb-3">
+                            <img src="https://placehold.co/800x500" class="w-100" alt="[Immagine segnaposto 57]">
+                        </figure>
+                        <header>
+                            <div class="article-category" style="color: #D42537">Lorem Ipsum</div>
+                            <h2 class="article-title-main fs-2 ">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</h2>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-2">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+            </div>
+
+            <div class="col-lg-2 col-md-12 mb-4 ps-lg-4">
+                <article>
+                    <a href="#" class="text-decoration-none" >
+                        <figure class="m-0 mb-2">
+                            <img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 58]">
+                        </figure>
+                        <header>
+                            <div class="article-category" style="color: #D42537">Lorem Ipsum</div>
+                            <h4 class="article-title-sub fs-6">Nisi ut aliquip ex ea commodo consequat duis aute irure</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-1">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+                <hr class="my-3 text-danger">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <header>
+                            <div class="article-category" style="color: #D42537">Lorem Ipsum</div>
+                            <h4 class="article-title-sub fs-6">Dolor in reprehenderit in voluptate velit esse cillum dolore</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-1">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+                <hr class="my-3 text-danger">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <header>
+                            <div class="article-category" style="color: #D42537">Lorem Ipsum</div>
+                            <h4 class="article-title-sub fs-6">Dolor in reprehenderit in voluptate velit esse cillum dolore</h4>
+                        </header>
+                        <footer>
+                            <div class="article-author mt-1">Lorem Ipsum</div>
+                        </footer>
+                    </a>
+                </article>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="py-5 border-top">
+    <div class="container px-4">
+        <header class="d-flex justify-content-between align-items-center mb-4 border-bottom">
+            <h3 class="section-header border-bottom-0 mb-3">Lorempod ipsumcast</h3>
+            <nav class="d-none d-md-flex gap-2">
+                <button class="newsletter-nav-btn" id="pod-prev" aria-label="prev-button"><i class="bi bi-chevron-left"></i></button>
+                <button class="newsletter-nav-btn" id="pod-next" aria-label="next-button"><i class="bi bi-chevron-right"></i></button>
+            </nav>
+        </header>
+
+        <div class="podcast-track pb-2" id="podcastTrack">
+            <article class="podcast-card bg-stampa-blue">
+                <a href="#" class="text-decoration-none d-flex flex-column h-100">
+                    <figure class="position-relative m-0">
+                        <img src="https://placehold.co/400x400" class="w-100" alt="[Immagine segnaposto 59]">
+                        <i class="bi bi-headphones text-white position-absolute fs-3" style="bottom: 10px; right: 15px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);"></i>
+                    </figure>
+                    <div class="p-3 flex-grow-1 d-flex flex-column">
+                        <header>
+                            <div class="article-category text-white text-opacity-75 m-0 mb-2">Lorem Ipsum</div>
+                            <h4 class="fs-5 fw-bold text-white mb-3" style="font-family: 'Georgia', serif; line-height: 1.2;">Ut enim ad minim veniam, quis nostrud exercitation ullamco</h4>
+                        </header>
+                        <footer class="mt-auto">
+                            <div class="article-author text-white text-opacity-75">Lorem Ipsum</div>
+                        </footer>
+                    </div>
+                </a>
+            </article>
+
+            <article class="podcast-card bg-stampa-blue">
+                <a href="#" class="text-decoration-none d-flex flex-column h-100">
+                    <figure class="position-relative m-0">
+                        <img src="https://placehold.co/400x400" class="w-100" alt="[Immagine segnaposto 60]">
+                        <i class="bi bi-headphones text-white position-absolute fs-3" style="bottom: 10px; right: 15px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);"></i>
+                    </figure>
+                    <div class="p-3 flex-grow-1 d-flex flex-column">
+                        <header>
+                            <div class="article-category text-white text-opacity-75 m-0 mb-2">Lorem Ipsum</div>
+                            <h4 class="fs-5 fw-bold text-white mb-3" style="font-family: 'Georgia', serif; line-height: 1.2;">Duis aute irure dolor in reprehenderit in voluptate velit esse</h4>
+                        </header>
+                        <footer class="mt-auto">
+                            <div class="article-author text-white text-opacity-75">Lorem Ipsum</div>
+                        </footer>
+                    </div>
+                </a>
+            </article>
+
+            <article class="podcast-card bg-stampa-blue">
+                <a href="#" class="text-decoration-none d-flex flex-column h-100">
+                    <figure class="position-relative m-0">
+                        <img src="https://placehold.co/400x400" class="w-100" alt="[Immagine segnaposto 61]">
+                        <i class="bi bi-headphones text-white position-absolute fs-3" style="bottom: 10px; right: 15px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);"></i>
+                    </figure>
+                    <div class="p-3 flex-grow-1 d-flex flex-column">
+                        <header>
+                            <div class="article-category text-white text-opacity-75 m-0 mb-2">Lorem Ipsum</div>
+                            <h4 class="fs-5 fw-bold text-white mb-3" style="font-family: 'Georgia', serif; line-height: 1.2;">Excepteur sint occaecat cupidatat non proident sunt in culpa</h4>
+                        </header>
+                        <footer class="mt-auto">
+                            <div class="article-author text-white text-opacity-75">Lorem Ipsum</div>
+                        </footer>
+                    </div>
+                </a>
+            </article>
+
+            <article class="podcast-card bg-stampa-blue">
+                <a href="#" class="text-decoration-none d-flex flex-column h-100">
+                    <figure class="position-relative m-0">
+                        <img src="https://placehold.co/400x400" class="w-100" alt="[Immagine segnaposto 62]">
+                        <i class="bi bi-headphones text-white position-absolute fs-3" style="bottom: 10px; right: 15px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);"></i>
+                    </figure>
+                    <div class="p-3 flex-grow-1 d-flex flex-column">
+                        <header>
+                            <div class="article-category text-white text-opacity-75 m-0 mb-2">Lorem Ipsum</div>
+                            <h4 class="fs-5 fw-bold text-white mb-3" style="font-family: 'Georgia', serif; line-height: 1.2;">Sunt in culpa qui officia deserunt mollit anim id est laborum</h4>
+                        </header>
+                        <footer class="mt-auto">
+                            <div class="article-author text-white text-opacity-75">Lorem Ipsum</div>
+                        </footer>
+                    </div>
+                </a>
+            </article>
+
+            <article class="podcast-card bg-stampa-blue">
+                <a href="#" class="text-decoration-none d-flex flex-column h-100">
+                    <figure class="position-relative m-0">
+                        <img src="https://placehold.co/400x400" class="w-100" alt="[Immagine segnaposto 63]">
+                        <i class="bi bi-headphones text-white position-absolute fs-3" style="bottom: 10px; right: 15px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);"></i>
+                    </figure>
+                    <div class="p-3 flex-grow-1 d-flex flex-column">
+                        <header>
+                            <div class="article-category text-white text-opacity-75 m-0 mb-2">Lorem Ipsum</div>
+                            <h4 class="fs-5 fw-bold text-white mb-3" style="font-family: 'Georgia', serif; line-height: 1.2;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem</h4>
+                        </header>
+                        <footer class="mt-auto">
+                            <div class="article-author text-white text-opacity-75">Lorem Ipsum</div>
+                        </footer>
+                    </div>
+                </a>
+            </article>
+
+            <article class="podcast-card bg-stampa-blue">
+                <a href="#" class="text-decoration-none d-flex flex-column h-100">
+                    <figure class="position-relative m-0">
+                        <img src="https://placehold.co/400x400" class="w-100" alt="[Immagine segnaposto 64]">
+                        <i class="bi bi-headphones text-white position-absolute fs-3" style="bottom: 10px; right: 15px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);"></i>
+                    </figure>
+                    <div class="p-3 flex-grow-1 d-flex flex-column">
+                        <header>
+                            <div class="article-category text-white text-opacity-75  m-0 mb-2">Lorem Ipsum</div>
+                            <h4 class="fs-5 fw-bold text-white mb-3" style="font-family: 'Georgia', serif; line-height: 1.2;">Nemo enim ipsam voluptatem quia voluptas sit aspernatur</h4>
+                        </header>
+                        <footer class="mt-auto">
+                            <div class="article-author text-white text-opacity-75">Lorem Ipsum</div>
+                        </footer>
+                    </div>
+                </a>
+            </article>
+
+            <article class="podcast-card bg-stampa-blue">
+                <a href="#" class="text-decoration-none d-flex flex-column h-100">
+                    <figure class="position-relative m-0">
+                        <img src="https://placehold.co/400x400" class="w-100" alt="[Immagine segnaposto 65]">
+                        <i class="bi bi-headphones text-white position-absolute fs-3" style="bottom: 10px; right: 15px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);"></i>
+                    </figure>
+                    <div class="p-3 flex-grow-1 d-flex flex-column">
+                        <header>
+                            <div class="article-category text-white text-opacity-75  m-0 mb-2">Lorem Ipsum</div>
+                            <h4 class="fs-5 fw-bold text-white mb-3" style="font-family: 'Georgia', serif; line-height: 1.2;">Neque porro quisquam est, qui dolorem ipsum quia dolor</h4>
+                        </header>
+                        <footer class="mt-auto">
+                            <div class="article-author text-white text-opacity-75">Lorem Ipsum</div>
+                        </footer>
+                    </div>
+                </a>
+            </article>
+
+            <article class="podcast-card bg-stampa-blue">
+                <a href="#" class="text-decoration-none d-flex flex-column h-100">
+                    <figure class="position-relative m-0">
+                        <img src="https://placehold.co/400x400" class="w-100" alt="[Immagine segnaposto 66]">
+                        <i class="bi bi-headphones text-white position-absolute fs-3" style="bottom: 10px; right: 15px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);"></i>
+                    </figure>
+                    <div class="p-3 flex-grow-1 d-flex flex-column">
+                        <header>
+                            <div class="article-category text-white text-opacity-75  m-0 mb-2">Lorem Ipsum</div>
+                            <h4 class="fs-5 fw-bold text-white mb-3" style="font-family: 'Georgia', serif; line-height: 1.2;">Quis autem vel eum iure reprehenderit qui in ea voluptate</h4>
+                        </header>
+                        <footer class="mt-auto">
+                            <div class="article-author text-white text-opacity-75">Lorem Ipsum</div>
+                        </footer>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="bg-gray py-4">
+    <div class="container px-4">
+        <header>
+            <h3 class="section-header mt-4">Lorema</h3>
+        </header>
+        <div class="row mb-5">
+            <div class="col-md-3 mb-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2"><img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 67]"></figure>
+                        <header><h4 class="article-title-sub fs-6">Quis nostrud exercitation ullamco laboris nisi ut aliquip</h4></header>
+                    </a>
+                </article>
+            </div>
+            <div class="col-md-3 mb-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2"><img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 68]"></figure>
+                        <header><h4 class="article-title-sub fs-6">Ex ea commodo consequat duis aute irure dolor in reprehenderit</h4></header>
+                    </a>
+                </article>
+            </div>
+            <div class="col-md-3 mb-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2"><img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 69]"></figure>
+                        <header><h4 class="article-title-sub fs-6">In voluptate velit esse cillum dolore eu fugiat nulla pariatur</h4></header>
+                    </a>
+                </article>
+            </div>
+            <div class="col-md-3 mb-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2"><img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 70]"></figure>
+                        <header><h4 class="article-title-sub fs-6">In voluptate velit esse cillum dolore eu fugiat nulla pariatur</h4></header>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container px-4 py-4">
+    <header>
+        <h3 class="section-header mt-4">Lorema</h3>
+    </header>
+    <div class="row mb-5">
+        <div class="col-md-3 mb-4">
+            <article>
+                <a href="#" class="text-decoration-none">
+                    <figure class="m-0 mb-2"><img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 71]"></figure>
+                    <header><h4 class="article-title-sub fs-6">Quis nostrud exercitation ullamco laboris nisi ut aliquip</h4></header>
+                </a>
+            </article>
+        </div>
+        <div class="col-md-3 mb-4">
+            <article>
+                <a href="#" class="text-decoration-none">
+                    <figure class="m-0 mb-2"><img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 72]"></figure>
+                    <header><h4 class="article-title-sub fs-6">Ex ea commodo consequat duis aute irure dolor in reprehenderit</h4></header>
+                </a>
+            </article>
+        </div>
+        <div class="col-md-3 mb-4">
+            <article>
+                <a href="#" class="text-decoration-none">
+                    <figure class="m-0 mb-2"><img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 73]"></figure>
+                    <header><h4 class="article-title-sub fs-6">In voluptate velit esse cillum dolore eu fugiat nulla pariatur</h4></header>
+                </a>
+            </article>
+        </div>
+        <div class="col-md-3 mb-4">
+            <article>
+                <a href="#" class="text-decoration-none">
+                    <figure class="m-0 mb-2"><img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 74]"></figure>
+                    <header><h4 class="article-title-sub fs-6">In voluptate velit esse cillum dolore eu fugiat nulla pariatur</h4></header>
+                </a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="bg-gray py-4">
+    <div class="container px-4">
+        <header>
+            <h3 class="section-header mt-4">Lorema</h3>
+        </header>
+        <div class="row mb-5">
+            <div class="col-md mb-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2"><img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 75]"></figure>
+                        <header><h4 class="article-title-sub fs-6">Quis nostrud exercitation ullamco laboris nisi ut aliquip</h4></header>
+                    </a>
+                </article>
+            </div>
+            <div class="col-md mb-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2"><img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 76]"></figure>
+                        <header><h4 class="article-title-sub fs-6">Ex ea commodo consequat duis aute irure dolor in reprehenderit</h4></header>
+                    </a>
+                </article>
+            </div>
+            <div class="col-md mb-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2"><img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 77]"></figure>
+                        <header><h4 class="article-title-sub fs-6">In voluptate velit esse cillum dolore eu fugiat nulla pariatur</h4></header>
+                    </a>
+                </article>
+            </div>
+            <div class="col-md mb-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2"><img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 78]"></figure>
+                        <header><h4 class="article-title-sub fs-6">In voluptate velit esse cillum dolore eu fugiat nulla pariatur</h4></header>
+                    </a>
+                </article>
+            </div>
+            <div class="col-md mb-4">
+                <article>
+                    <a href="#" class="text-decoration-none">
+                        <figure class="m-0 mb-2"><img src="https://placehold.co/400x250" class="w-100" alt="[Immagine segnaposto 79]"></figure>
+                        <header><h4 class="article-title-sub fs-6">In voluptate velit esse cillum dolore eu fugiat nulla pariatur</h4></header>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="pt-5 pb-4 mt-5 bg-stampa-blue text-white">
+    <div class="container px-4">
+        <div class="row g-4 mb-4">
+
+            <div class="col-12 col-lg-8 order-1 order-lg-2">
+                <div class="row g-3">
+                    <nav class="col-6 col-md-4 text-center text-md-start">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-3"><a href="#" class="text-white text-decoration-none fw-bold small">IPSUM DOLOR</a></li>
+                            <li class="mb-3"><a href="#" class="text-white text-decoration-none fw-bold small">CONSECTETUR ADIPIS</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="col-6 col-md-4 text-center text-md-start">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-3"><a href="#" class="text-white text-decoration-none fw-bold small">TEMPOR INCIDIDUNT</a></li>
+                            <li class="mb-3"><a href="#" class="text-white text-decoration-none fw-bold small">MAGNA ALIQUA</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="col-12 col-md-4 text-center text-md-start">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-3"><a href="#" class="text-white text-decoration-none fw-bold small">REPREHENDERIT</a></li>
+                            <li class="mb-3"><a href="#" class="text-white text-decoration-none fw-bold small">VOLUPTATE VELIT</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <hr class="border-light my-4 opacity-25">
+
+                <div class="row g-3">
+                    <nav class="col-6 col-md-4 text-center text-md-start">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a href="#" class="text-white text-decoration-none small opacity-75">Eiusmod tempor</a></li>
+                            <li class="mb-2"><a href="#" class="text-white text-decoration-none small opacity-75">Labore et dolore</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="col-6 col-md-4 text-center text-md-start">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a href="#" class="text-white text-decoration-none small opacity-75">Duis aute irure</a></li>
+                            <li class="mb-2"><a href="#" class="text-white text-decoration-none small opacity-75">Excepteur sint</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="col-12 col-md-4 text-center text-md-start">
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a href="#" class="text-white text-decoration-none small opacity-75">Accusantium dol</a></li>
+                            <li class="mb-2"><a href="#" class="text-white text-decoration-none small opacity-75">Laudantium totam</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="d-none d-lg-block col-lg-1 order-lg-2"></div>
+
+            <div class="col-12 col-lg-3 text-center text-lg-start order-2 order-lg-1 pt-4 pt-lg-0">
+                <hr class="d-lg-none border-light mb-4">
+                <a href="#" class="text-white text-decoration-none" aria-label="link">
+                    <svg viewBox="0 0 281 34" height="25" fill="currentColor">
+                        <path d="M30.274 32.517V19.588h-4.469c0 5.115-.913 8.761-6.68 8.761h-5.237V7.182c0-1.185.673-1.894 1.874-1.894h2.98V1.12H0v4.167h2.98c1.201 0 1.873.71 1.873 1.894v19.273c0 1.184-.672 1.894-1.874 1.894H.048v4.167h30.226zm15.24-31.34l-8.097 23.677c-.97 2.89-1.648 3.552-3.345 3.552h-1.65v4.167h14.255v-4.167H45.27c-1.309 0-3.005-.142-3.005-.9 0-.662.194-1.373.727-3.03l.582-1.895h9.89l1.019 3.41c.194.71.242 1.231.242 1.705 0 .521-1.212.71-2.667.71h-1.455v4.167h17.699v-4.167h-1.648c-1.697 0-2.376-.663-3.346-3.552L55.212 1.177h-9.698zm2.81 7.289h.102l3.619 10.09h-7.289l3.569-10.09zm54.941-7.94h-3.96l-.86 2.249C95.726 1.052 92.625 0 89.38 0c-6.585 0-13.694 2.153-13.694 10.048 0 13.73 20.662 8.181 20.662 15.023 0 2.728-3.006 4.115-5.488 4.115-5.63 0-9.783-3.492-10.402-8.514h-4.438v12.535h4.008l1.24-2.535c3.006 2.2 6.73 2.966 10.403 2.966 6.585 0 13.168-2.584 13.168-10.239 0-13.637-20.66-8.804-20.66-14.831 0-3.207 2.576-4.115 5.344-4.115 4.199 0 8.637 2.823 9.352 7.846h4.39V.53l.001-.003zm7.65 12.62c0-4.83 1.419-7.859 6.856-7.859v21.168c0 1.184-.662 1.894-1.844 1.894h-2.932v4.167h18.348v-4.167h-2.837c-1.182 0-1.844-.71-1.844-1.895V5.288c5.438 0 6.856 3.03 6.856 7.863h4.397V1.121H106.52v12.03h4.397l-.002-.005zm34.951-11.969l-8.097 23.677c-.97 2.89-1.648 3.552-3.345 3.552h-1.649v4.167h14.255v-4.167h-1.407c-1.309 0-3.005-.142-3.005-.9 0-.662.194-1.373.727-3.03l.582-1.895h9.89l1.019 3.41c.194.71.242 1.231.242 1.705 0 .521-1.212.71-2.667.71h-1.454v4.167h17.699v-4.167h-1.648c-1.698 0-2.376-.663-3.346-3.552l-8.1-23.677h-9.695zm2.812 7.289h.1l3.62 10.09h-7.289l3.569-10.09zm21.754-7.344v4.167h2.894c1.206 0 1.882.71 1.882 1.894v19.271c0 1.185-.676 1.895-1.882 1.895h-2.894v4.166h13.943V28.35h-2.026c-1.206 0-1.881-.71-1.881-1.895V6h.096l7.525 26.516h7.043l7.573-26.043h.097v19.98c0 1.185-.675 1.895-1.882 1.895h-2.025v4.166h17.509v-4.166h-2.653c-1.206 0-1.882-.71-1.882-1.894V7.182c0-1.184.675-1.894 1.882-1.894h2.653V1.12H199.23l-5.692 19.273h-.097L187.897 1.12h-17.465zm52.39 25.389c0 1.184-.67 1.894-1.866 1.894h-2.917v4.168h18.84v-4.168h-3.203c-1.196 0-1.866-.71-1.866-1.894v-7.483h5.26c8.799 0 13.438-2.462 13.438-8.948 0-6.487-4.639-8.903-12.48-8.903H217.99v4.168h2.965c1.196 0 1.865.71 1.865 1.894v19.272zm9.185-21.408h4.789c2.63 0 4.742 1.85 4.742 4.789 0 2.94-2.207 4.74-5.493 4.74h-4.038v-9.53zm25.425-3.926l-8.097 23.677c-.97 2.89-1.648 3.552-3.345 3.552h-1.65v4.167h14.255v-4.167h-1.406c-1.309 0-3.005-.142-3.005-.9 0-.662.193-1.373.727-3.03l.582-1.895h9.89l1.019 3.41c.194.71.242 1.231.242 1.705 0 .521-1.213.71-2.667.71h-1.454v4.167h17.698v-4.167h-1.648c-1.697 0-2.376-.663-3.346-3.552l-8.096-23.677h-9.7zm2.811 7.289h.101l3.619 10.09h-7.288l3.568-10.09z" fill="currentColor" fill-rule="nonzero"></path>
+                    </svg>
+                </a>
+                <div class="mt-4">
+                    <p class="mb-1 opacity-75" style="font-size: 0.9rem;">
+                        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-light mt-3 mb-4 opacity-25">
+
+        <div class="text-center px-2">
+            <p class="mb-0 opacity-75" style="font-size: 0.75rem; line-height: 1.6;">
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade" id="menuOverlay" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content bg-stampa-blue text-white rounded-0">
+
+            <header class="modal-header border-0 py-4">
+                <div class="container-xl d-flex justify-content-between align-items-center">
+                    <a href="#" class="text-white text-decoration-none" aria-label="link">
+                        <svg viewBox="0 0 281 34" height="40" class="d-inline-block align-text-bottom">
+                            <path d="M30.274 32.517V19.588h-4.469c0 5.115-.913 8.761-6.68 8.761h-5.237V7.182c0-1.185.673-1.894 1.874-1.894h2.98V1.12H0v4.167h2.98c1.201 0 1.873.71 1.873 1.894v19.273c0 1.184-.672 1.894-1.874 1.894H.048v4.167h30.226zm15.24-31.34l-8.097 23.677c-.97 2.89-1.648 3.552-3.345 3.552h-1.65v4.167h14.255v-4.167H45.27c-1.309 0-3.005-.142-3.005-.9 0-.662.194-1.373.727-3.03l.582-1.895h9.89l1.019 3.41c.194.71.242 1.231.242 1.705 0 .521-1.212.71-2.667.71h-1.455v4.167h17.699v-4.167h-1.648c-1.697 0-2.376-.663-3.346-3.552L55.212 1.177h-9.698zm2.81 7.289h.102l3.619 10.09h-7.289l3.569-10.09zm54.941-7.94h-3.96l-.86 2.249C95.726 1.052 92.625 0 89.38 0c-6.585 0-13.694 2.153-13.694 10.048 0 13.73 20.662 8.181 20.662 15.023 0 2.728-3.006 4.115-5.488 4.115-5.63 0-9.783-3.492-10.402-8.514h-4.438v12.535h4.008l1.24-2.535c3.006 2.2 6.73 2.966 10.403 2.966 6.585 0 13.168-2.584 13.168-10.239 0-13.637-20.66-8.804-20.66-14.831 0-3.207 2.576-4.115 5.344-4.115 4.199 0 8.637 2.823 9.352 7.846h4.39V.53l.001-.003zm7.65 12.62c0-4.83 1.419-7.859 6.856-7.859v21.168c0 1.184-.662 1.894-1.844 1.894h-2.932v4.167h18.348v-4.167h-2.837c-1.182 0-1.844-.71-1.844-1.895V5.288c5.438 0 6.856 3.03 6.856 7.863h4.397V1.121H106.52v12.03h4.397l-.002-.005zm34.951-11.969l-8.097 23.677c-.97 2.89-1.648 3.552-3.345 3.552h-1.649v4.167h14.255v-4.167h-1.407c-1.309 0-3.005-.142-3.005-.9 0-.662.194-1.373.727-3.03l.582-1.895h9.89l1.019 3.41c.194.71.242 1.231.242 1.705 0 .521-1.212.71-2.667.71h-1.454v4.167h17.699v-4.167h-1.648c-1.698 0-2.376-.663-3.346-3.552l-8.1-23.677h-9.695zm2.812 7.289h.1l3.62 10.09h-7.289l3.569-10.09zm21.754-7.344v4.167h2.894c1.206 0 1.882.71 1.882 1.894v19.271c0 1.185-.676 1.895-1.882 1.895h-2.894v4.166h13.943V28.35h-2.026c-1.206 0-1.881-.71-1.881-1.895V6h.096l7.525 26.516h7.043l7.573-26.043h.097v19.98c0 1.185-.675 1.895-1.882 1.895h-2.025v4.166h17.509v-4.166h-2.653c-1.206 0-1.882-.71-1.882-1.894V7.182c0-1.184.675-1.894 1.882-1.894h2.653V1.12H199.23l-5.692 19.273h-.097L187.897 1.12h-17.465zm52.39 25.389c0 1.184-.67 1.894-1.866 1.894h-2.917v4.168h18.84v-4.168h-3.203c-1.196 0-1.866-.71-1.866-1.894v-7.483h5.26c8.799 0 13.438-2.462 13.438-8.948 0-6.487-4.639-8.903-12.48-8.903H217.99v4.168h2.965c1.196 0 1.865.71 1.865 1.894v19.272zm9.185-21.408h4.789c2.63 0 4.742 1.85 4.742 4.789 0 2.94-2.207 4.74-5.493 4.74h-4.038v-9.53zm25.425-3.926l-8.097 23.677c-.97 2.89-1.648 3.552-3.345 3.552h-1.65v4.167h14.255v-4.167h-1.406c-1.309 0-3.005-.142-3.005-.9 0-.662.193-1.373.727-3.03l.582-1.895h9.89l1.019 3.41c.194.71.242 1.231.242 1.705 0 .521-1.213.71-2.667.71h-1.454v4.167h17.698v-4.167h-1.648c-1.697 0-2.376-.663-3.346-3.552l-8.096-23.677h-9.7zm2.811 7.289h.101l3.619 10.09h-7.288l3.568-10.09z" fill="currentColor" fill-rule="nonzero"></path>
+                        </svg>
+                    </a>
+                    <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="modal" aria-label="close-button"></button>
+                </div>
+            </header>
+
+            <div class="modal-body pt-0">
+                <div class="container-xl">
+
+                    <section class="row mb-5">
+                        <div class="col-12">
+                            <h3 class="menu-title">Neque porro</h3>
+                            <hr class="menu-hr">
+                            <nav class="row">
+                                <div class="col-12 col-md-4 mb-2"><a href="#" class="menu-link text-white"><i class="bi bi-journal-text me-2"></i>Lorem ipsum dolor</a></div>
+                                <div class="col-12 col-md-4 mb-2"><a href="#" class="menu-link text-white"><i class="bi bi-star-fill me-2"></i>Sit amet</a></div>
+                                <div class="col-12 col-md-4 mb-2"><a href="#" class="menu-link text-white fw-bold">Consectetur</a></div>
+                            </nav>
+                        </div>
+                    </section>
+
+                    <div class="row mb-5">
+                        <section class="col-12 col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                            <h3 class="menu-title">Adipisci</h3>
+                            <hr class="menu-hr">
+                            <div class="row">
+                                <nav class="col-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#" class="menu-link">Lorem</a></li>
+                                        <li><a href="#" class="menu-link">Ipsum</a></li>
+                                        <li><a href="#" class="menu-link">Dolor sit amet</a></li>
+                                        <li><a href="#" class="menu-link">Consectetur</a></li>
+                                        <li><a href="#" class="menu-link">Adipiscing elit</a></li>
+                                        <li><a href="#" class="menu-link">Nunc et</a></li>
+                                        <li><a href="#" class="menu-link">Quam in</a></li>
+                                        <li><a href="#" class="menu-link">Suscipit</a></li>
+                                        <li><a href="#" class="menu-link">Vulputate</a></li>
+                                        <li><a href="#" class="menu-link">Sit amet</a></li>
+                                        <li><a href="#" class="menu-link">Ut nibh</a></li>
+                                        <li><a href="#" class="menu-link">Fusce vel</a></li>
+                                    </ul>
+                                </nav>
+                                <nav class="col-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#" class="menu-link">Risus</a></li>
+                                        <li><a href="#" class="menu-link">Luctus</a></li>
+                                        <li><a href="#" class="menu-link">Caonvallis</a></li>
+                                        <li><a href="#" class="menu-link">Ipsum</a></li>
+                                        <li><a href="#" class="menu-link">Vehicula</a></li>
+                                        <li><a href="#" class="menu-link">Elit</a></li>
+                                        <li><a href="#" class="menu-link">Phasellus</a></li>
+                                        <li><a href="#" class="menu-link">Pulvinar</a></li>
+                                        <li><a href="#" class="menu-link">Morbi</a></li>
+                                        <li><a href="#" class="menu-link">Cursus</a></li>
+                                        <li><a href="#" class="menu-link">Commodo</a></li>
+                                        <li><a href="#" class="menu-link">Vitae accumsan</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </section>
+
+                        <section class="col-12 col-lg-6 ps-lg-5">
+                            <h3 class="menu-title">Justo luctus</h3>
+                            <hr class="menu-hr">
+                            <div class="row">
+                                <nav class="col-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#" class="menu-link">Sed</a></li>
+                                        <li><a href="#" class="menu-link">Bibendum</a></li>
+                                        <li><a href="#" class="menu-link">Leo erat</a></li>
+                                        <li><a href="#" class="menu-link">Ac sagittis</a></li>
+                                        <li><a href="#" class="menu-link">Elit</a></li>
+                                        <li><a href="#" class="menu-link">Pharetra</a></li>
+                                        <li><a href="#" class="menu-link">Scelerisque</a></li>
+                                    </ul>
+                                </nav>
+                                <nav class="col-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#" class="menu-link">Suspendisse</a></li>
+                                        <li><a href="#" class="menu-link">Tincidunt</a></li>
+                                        <li><a href="#" class="menu-link">Fusce</a></li>
+                                        <li><a href="#" class="menu-link">Auctor</a></li>
+                                        <li><a href="#" class="menu-link">Placerat</a></li>
+                                        <li><a href="#" class="menu-link">Aliquet neque</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <div class="row mb-5">
+                        <section class="col-12 col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                            <h3 class="menu-title">Nulla lacus quam</h3>
+                            <hr class="menu-hr">
+                            <div class="row">
+                                <nav class="col-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#" class="menu-link">Lobortis</a></li>
+                                        <li><a href="#" class="menu-link">Suscipit</a></li>
+                                    </ul>
+                                </nav>
+                                <nav class="col-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#" class="menu-link">Amet mi</a></li>
+                                        <li><a href="#" class="menu-link">Curabitur</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </section>
+
+                        <section class="col-12 col-lg-6 ps-lg-5">
+                            <h3 class="menu-title">Suspendisse</h3>
+                            <hr class="menu-hr">
+                            <div class="row">
+                                <nav class="col-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#" class="menu-link">Tincidunt</a></li>
+                                        <li><a href="#" class="menu-link">Euismod</a></li>
+                                        <li><a href="#" class="menu-link">Curabitur</a></li>
+                                        <li><a href="#" class="menu-link">Elementum</a></li>
+                                    </ul>
+                                </nav>
+                                <nav class="col-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#" class="menu-link">Aliquam erat</a></li>
+                                        <li><a href="#" class="menu-link">Voluptat</a></li>
+                                        <li><a href="#" class="menu-link">Vestibulum</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="container modal-footer border-top py-4" style="border-color: rgba(255,255,255,0.2) !important;">
+                <nav class="container-xl d-flex flex-wrap gap-3 gap-md-5">
+                    <a href="#" class="menu-link text-white fw-bold">Phasellus rutrum</a>
+                    <a href="#" class="menu-link text-white fw-bold">Venenatis</a>
+                    <a href="#" class="menu-link text-white fw-bold">Lacinia ac eros</a>
+                    <a href="#" class="menu-link text-white fw-bold">Proint et massa</a>
+                </nav>
+            </footer>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

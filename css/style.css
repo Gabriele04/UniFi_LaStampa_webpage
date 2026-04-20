@@ -1,0 +1,358 @@
+
+ body {
+     font-family: "Noto Sans", "Helvetica Neue", Helvetica, sans-serif !important;
+     text-rendering: optimizeLegibility;
+     -webkit-font-smoothing: antialiased;
+     background-color: #f4f7f9;
+ }
+
+.bg-stampa-blue { background-color: #003B5C; }
+.text-stampa-blue { color: #003B5C; }
+.bg { background-color: #F2F6F9; }
+.bg-mobile { background-color: #ECF4FA; }
+.bg-mobile-darker { background-color: #E6F2FE; }
+.bg-yellow{ background-color: #fbfaf5;}
+.bg-gray { background-color: #ECF0F2; }
+
+.font-logo {
+    font-family: 'Georgia', serif;
+    letter-spacing: -2px;
+    color: #000;
+}
+
+.scroll-mobile {
+    padding-bottom: 6px;
+}
+.scroll-mobile::-webkit-scrollbar {
+    height: 7px;
+    width: 20px;
+    padding-left: 20px;
+}
+.scroll-mobile::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+ }
+.scroll-mobile::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 4px;
+ }
+.scroll-mobile::-webkit-scrollbar-thumb:hover {
+    background: #888;
+ }
+
+
+.menu-link {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 1.05rem;
+    line-height: 2.2;
+    font-weight: bold;
+}
+.menu-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+.menu-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-family: 'Georgia', serif;
+}
+.menu-hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+}
+.editoriale-title-section {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #000;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #ccc;
+}
+.editoriali-track {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+}
+
+.editoriali-track::-webkit-scrollbar {
+    height: 8px;
+}
+.editoriali-track::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+.editoriali-track::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 4px;
+}
+.editoriali-track::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+.editoriale-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 320px;
+    text-decoration: none;
+    border-right: 1px solid #ccc;
+    padding-right: 25px;
+}
+
+.editoriale-card:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.editoriale-card:hover .editoriale-title {
+    color: #003B5C;
+}
+.editoriale-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.editoriale-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.editoriale-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #000;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    transition: color 0.2s;
+}
+.editoriale-author {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #6c6c6c;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.section-header {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #000;
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0;
+    margin-bottom: 15px;
+}
+
+.article-category {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.article-title-main {
+    font-family: 'Georgia', serif;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #003B5C;
+    line-height: 1.1;
+    margin-bottom: 5px;
+}
+
+.article-title-sub {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    transition: color 0.2s;
+}
+
+
+a:hover .article-title-sub,
+a:hover .article-title-main {
+    color: #003B5C;
+}
+
+.article-author {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #6c6c6c;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.side-article {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+}
+.side-article:last-child {
+    border-bottom: none;
+}
+.side-article-img-container {
+    width: 100px;
+    flex-shrink: 0;
+    position: relative;
+}
+.side-article-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.side-article-title {
+    font-family: 'Georgia', serif;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #000;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    transition: color 0.2s;
+}
+.side-article:hover .side-article-title {
+    color: #003B5C;
+}
+
+.video-card {
+    position: relative;
+    display: block;
+    border-radius: 2px;
+    overflow: hidden;
+    aspect-ratio: 9/15;
+}
+.video-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.video-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(255,255,255,0.8) 40%, rgba(0,0,0,0) 100%);
+    pointer-events: none;
+}
+.video-logo {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #757575;
+    font-family: 'Georgia', serif;
+    font-weight: 900;
+    font-size: 2rem;
+    text-shadow: 0 2px 4px rgba(255,255,255,0.1);
+    pointer-events: none;
+}
+.video-text {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    color: #545454;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-shadow: 0 2px 4px rgba(255,255,255,0.1);
+    line-height: 1.25;
+    pointer-events: none;
+}
+
+.newsletter-section {
+    background-color: #f4f7f9;
+    padding: 30px 0 40px 0;
+    border-top: 1px solid #ccc;
+}
+.newsletter-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+.newsletter-title {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #003B5C;
+    margin: 0;
+}
+.newsletter-controls {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.newsletter-nav-btn {
+    border: 1px solid #003B5C;
+    background: transparent;
+    color: #003B5C;
+    padding:  6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.newsletter-nav-btn:hover {
+    background-color: #003B5C;
+    color: white;
+}
+.newsletter-track, .podcast-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.newsletter-track::-webkit-scrollbar, .podcast-track::-webkit-scrollbar {
+    display: none;
+}
+.newsletter-card {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+    display: block;
+    -webkit-user-drag: none;
+}
+.newsletter-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.podcast-card {
+    flex-shrink: 0;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    -webkit-user-drag: none;
+}
+.podcast-card img {
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
